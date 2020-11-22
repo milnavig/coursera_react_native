@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, ScrollView, View } from 'react-native';
 import { Card } from 'react-native-elements';
 import { TEXT } from '../shared/text';
+import * as Animatable from 'react-native-animatable';
 
 class Contact extends Component {
 
@@ -18,6 +19,7 @@ class Contact extends Component {
     
     render() {
         return(
+            <Animatable.View animation="fadeInDown" duration={2000} delay={1000}> 
             <Card
                 title="Contact Information"
             >
@@ -40,6 +42,7 @@ class Contact extends Component {
                         style={{margin: 10}}>
                         {this.state.contacts.email}</Text>
             </Card>
+            </Animatable.View>
         );
     }
 }
